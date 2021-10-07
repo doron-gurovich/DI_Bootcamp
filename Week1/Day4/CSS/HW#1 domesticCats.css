@@ -1,0 +1,11 @@
+/*
+
+stylesheet for HW#1 domesticCats.html
+
+*/
+
+img {
+  border: 15px solid #FFA500;
+  class="center";
+  style= "width:400px;height:250px;"
+}
