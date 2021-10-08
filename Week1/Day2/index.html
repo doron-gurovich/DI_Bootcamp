@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset = "utf-8">
+
+  <title> Landing Page </title>
+  <meta name = "description" content = "Landing Page">
+  <meta name = "author" content = "DG">
+
+  <link rel = "stylesheet" href = "./CSS/style.css">
+
+</head>
+
+<body>
+
+<!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="./Products.html"><i class="fa fa-fw fa-envelope"></i> Products</a>
+  <a href="./login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+</div>
+
+	<svg width="100%" height="100%" viewBox="0 0 500 500"
+		preserveAspectRatio="xMidYMid meet"
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	  <defs>
+		<g id="circles">
+		  <circle cx="30" cy="30" r="20" fill="blue" fill-opacity="0.7" />
+		  <circle cx="20" cy="50" r="20" fill="green" fill-opacity="0.7" />
+		  <circle cx="40" cy="50" r="20" fill="red" fill-opacity="0.7" />
+		</g>
+	  </defs>
+	  <use href="#circles" />
+	  <circle cx="30" cy="40">
+		<animate attributeName="r" values="0;5;0" dur="10s" repeatCount="indefinite" />
+	  </circle>  
+	  <text x="70" y="50"></text>
+
+	</svg>
+
+
+<div id="centered_div"> Landing Page </div>
+
+</body>
