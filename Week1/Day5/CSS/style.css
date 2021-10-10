@@ -7,7 +7,7 @@
 
 /* Navbar links */
 .navbar a {
-  float: right;
+  float: left;
   text-align: center;
   padding: 12px;
   color: white;
