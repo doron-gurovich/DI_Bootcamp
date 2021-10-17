@@ -1,0 +1,36 @@
+/** 
+ * Vertical stripes
+ */
+ body {
+    margin: auto 0;
+    font-family: Arial;
+}
+
+.zone {
+    cursor: pointer;
+    color:#FFF;
+    font-size: 2em;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    transition: all 0.3s linear;
+    width: 100vw;
+    height: 50vh;
+    margin: auto;
+}
+
+.vertical{
+    background: linear-gradient(to bottom right, red, yellow);
+    background-size: 100px 100px;
+    background-position: 0 0, 30px 30px;
+}
+
+.chess{
+    background-color: #eee;
+    background-image: 
+        linear-gradient(
+            45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+        linear-gradient(
+        45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+}
