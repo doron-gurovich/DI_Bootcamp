@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    height: 80vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    height:50%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.center{
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 70%;
+    height: 20%;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height:50%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.box{
+
+    background-color: yellow;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;   
+}
