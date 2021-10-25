@@ -1,29 +1,16 @@
-let objOld = {
-    FullName: "Qwe",
-    Mass: 130,
-    Hieght: 190,
+const arrTest = [1,2,3,3,3,3,4,5,1,0,-1];
 
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
+uniqueElements = (arr) => {
+    let arrTemp = arr.slice().sort();
+    let arrRes = [];
+
+    for(i = 0; i < arr.length; i++) {
+        if(arrTemp[i] != arrTemp[i+1]) {
+            arrRes.push(arrTemp[i]);
+        }
     }
+
+    return arrRes;
 }
 
-let objNew = {
-    FullName: "Asd",
-    Mass: 120,
-    Hieght: 190,
-
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
-    }
-}
-
-function compateBMI(obj1, obj2) {
-    if(obj1.BMI_calc() > obj2.BMI_calc()) {
-        return `${obj1.FullName} BMI is higher`;
-    } else {
-        return `${obj2.FullName} BMI is higher`;
-    }
-}
-
-console.log(compateBMI(objOld, objNew))
+console.log(`check this out! \nWe took ${arrTest} \nand transform it to ${uniqueElements(arrTest)}`);

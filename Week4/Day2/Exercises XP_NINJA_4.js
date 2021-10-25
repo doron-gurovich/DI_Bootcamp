@@ -1,29 +1,16 @@
-let objOld = {
-    FullName: "Qwe",
-    Mass: 130,
-    Hieght: 190,
+let arrTest = ['a', 3, 4, 2];
 
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
+
+biggestNumberInArray = (arrayNumber) => {
+    let iResult = 0;
+    
+    for(i = 0; i < arrayNumber.length; i++) {
+        if(arrayNumber[i] > iResult) {
+            iResult = arrayNumber[i];
+        }
     }
+    
+    return iResult;
 }
 
-let objNew = {
-    FullName: "Asd",
-    Mass: 120,
-    Hieght: 190,
-
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
-    }
-}
-
-function compateBMI(obj1, obj2) {
-    if(obj1.BMI_calc() > obj2.BMI_calc()) {
-        return `${obj1.FullName} BMI is higher`;
-    } else {
-        return `${obj2.FullName} BMI is higher`;
-    }
-}
-
-console.log(compateBMI(objOld, objNew))
+console.log(`we found that in the array ${arrTest} \nThe biggest number is ${biggestNumberInArray(arrTest)}`);

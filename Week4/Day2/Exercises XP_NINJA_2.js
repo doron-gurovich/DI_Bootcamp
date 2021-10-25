@@ -1,29 +1,23 @@
-let objOld = {
-    FullName: "Qwe",
-    Mass: 130,
-    Hieght: 190,
+let strTest = "aqwerty";
 
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
+CapitalizedLetters = (str) => {
+    let arrRes = [];
+    let strEven = "even: ";
+    let strOdd = "odd: ";
+
+    for(i = 0; i < str.length; i++) {
+        if(! ((i + 1)%2) ) {
+            strEven += str[i].toUpperCase();
+            strOdd += str[i];
+        } else {
+            strEven += str[i];
+            strOdd += str[i].toUpperCase();
+        }
     }
+
+    arrRes = [strOdd, strEven, str];
+
+    return arrRes;
 }
 
-let objNew = {
-    FullName: "Asd",
-    Mass: 120,
-    Hieght: 190,
-
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
-    }
-}
-
-function compateBMI(obj1, obj2) {
-    if(obj1.BMI_calc() > obj2.BMI_calc()) {
-        return `${obj1.FullName} BMI is higher`;
-    } else {
-        return `${obj2.FullName} BMI is higher`;
-    }
-}
-
-console.log(compateBMI(objOld, objNew))
+console.log(CapitalizedLetters(strTest));

@@ -1,29 +1,16 @@
-let objOld = {
-    FullName: "Qwe",
-    Mass: 130,
-    Hieght: 190,
+const strTest = "Madam";
 
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
+isPalindrome = (str) => {
+    let strTemp = str.slice().toLowerCase();
+    let iLength = strTemp.length - 1;
+
+    for(i = 0; i < Math.trunc(strTemp.length); i++) {
+        if(strTemp[i] != strTemp[iLength - i] ) {
+            return false;
+        }
     }
+
+    return true;
 }
 
-let objNew = {
-    FullName: "Asd",
-    Mass: 120,
-    Hieght: 190,
-
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
-    }
-}
-
-function compateBMI(obj1, obj2) {
-    if(obj1.BMI_calc() > obj2.BMI_calc()) {
-        return `${obj1.FullName} BMI is higher`;
-    } else {
-        return `${obj2.FullName} BMI is higher`;
-    }
-}
-
-console.log(compateBMI(objOld, objNew))
+console.log(`the string ${strTest} is palindrome: ${isPalindrome(strTest)}`);

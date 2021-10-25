@@ -1,29 +1,12 @@
-let objOld = {
-    FullName: "Qwe",
-    Mass: 130,
-    Hieght: 190,
+let iRandom = Math.random() * 100;
+let strRes = "the list of even numbers: "
 
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
+for(i = 0; i < iRandom; i++) {
+    if(! (i%2) ) {
+        strRes += i;
     }
+
+    strRes += " ";
 }
 
-let objNew = {
-    FullName: "Asd",
-    Mass: 120,
-    Hieght: 190,
-
-    BMI_calc: function() {
-        return this.Mass / (Math.pow(this.Hieght, 2));
-    }
-}
-
-function compateBMI(obj1, obj2) {
-    if(obj1.BMI_calc() > obj2.BMI_calc()) {
-        return `${obj1.FullName} BMI is higher`;
-    } else {
-        return `${obj2.FullName} BMI is higher`;
-    }
-}
-
-console.log(compateBMI(objOld, objNew))
+console.log(`random number ${iRandom} gave us ${strRes}`);
