@@ -13,7 +13,7 @@ function addStars(arr) {
     }
 
     // adding stars
-    // first we create the first/ last string
+    // first we create the first/ last strings
     let arrRes = [];
     
     arrRes[0] = "";
