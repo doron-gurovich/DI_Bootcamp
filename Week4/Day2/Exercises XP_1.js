@@ -1,18 +1,24 @@
-/*
-    Instructions
-    Create 2 variables, x and y. Each of them should have a different numeric value.
-    Write an if/else statement that checks which number is bigger.
-*/
+function infoAboutMe() {
+    console.log("my name is Doron. I'm living in Rehovot.");
+}
 
-let x = 5;
-let y = 5;
+infoAboutMe();
 
-if(x>y) {
-    strResult = "x is the bigger number";
-} else if (x<y) {
-    strResult = "y is the bigger number";
-} else {
-    strResult = "x is equal to y";
-};
+function infoAboutPerson(personName, personAge, personFavoriteColor) {
+    console.log(`Your name is ${personName}, your are ${personAge} years old, and your favorite color is ${personFavoriteColor}.`);
+}
 
-alert(strResult);
+infoAboutPerson("David", 45, "blue");
+infoAboutPerson("Josh", 12, "yellow");
+
+function infoAboutPersonPart3(personName, personAge, personFavoriteColor, personHobbies) {
+
+    infoAboutPerson(personName, personAge, personFavoriteColor);
+
+    personHobbies.forEach((element, index) => {
+        console.log(`hobbie # ${index} is ${element}`);
+    });
+}
+
+infoAboutPersonPart3("David", 45, "blue", ["tennis", "painting"]);
+infoAboutPersonPart3("Josh", 12, "yellow", ["videoGame", "hanging out with friends", "playing cards"]);
