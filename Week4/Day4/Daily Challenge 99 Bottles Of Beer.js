@@ -1,33 +1,32 @@
-let iNum = Number(prompt("Please insert some integer number in range (0, 99)", "99"));
-let arrResult = [];
+const iNum = parseInt(prompt("Please insert some integer number in range (0, 99)", "99")); // parceInt() is better then Number() : https://thisthat.dev/number-constructor-vs-parse-int/
 
+let arrResult = [];
 let iCurrentNumOfBottles = iNum;
 let iDelta = 1;
-let i = 0;
 let strItThem = "it";
 
 // here we will form first / last strings of array
 
-arrResult[i++] = "==============================";
+arrResult.push("==============================");
 
-while(iCurrentNumOfBottles > iDelta) {
+while(iCurrentNumOfBottles >= iDelta) {
 
     strItThem = (iDelta == 1 ? "it" : "them");
 
     let strTemp = `${iCurrentNumOfBottles} bottles of beer`;
 
-    arrResult[i++] = strTemp + ` on the wall \n`;
-    arrResult[i++] = strTemp + `\n`;
-    arrResult[i++] = `Take ${iDelta} down, pass ${strItThem} around \n`;
+    arrResult.push(`${strTemp} on the wall \n`);
+    arrResult.push(`${strTemp} \n`);
+    arrResult.push(`Take ${iDelta} down, pass ${strItThem} around \n`);
 
     iCurrentNumOfBottles -= iDelta++;
 }
 
-arrResult[i++] = `${iCurrentNumOfBottles} bottles of beer on the wall \n`;
-arrResult[i] = "==============================";
+arrResult.push(`${iCurrentNumOfBottles} bottles of beer on the wall \n`);
+arrResult.push("==============================");
 
 // lets print the result now w/ console.log()
 
-for(j = 0; j < arrResult.length; j++) {
+for(let j = 0; j < arrResult.length; j++) {
     console.log(arrResult[j]);
 }

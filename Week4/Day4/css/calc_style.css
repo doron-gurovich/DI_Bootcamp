@@ -1,0 +1,38 @@
+body {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+ p {
+    font-size: 4rem;
+ }
+ 
+ .button {
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ button.blue {
+     background-color: cyan;
+ }
+ 
+ button.green {
+     background-color: lightgreen;
+ }
+ 
+ button.orange {
+    background-color: orange;
+ }
+
+ button.red {
+    background-color: red;
+ }
+ button.big {
+    padding: 14px 70px;
+}
+
+button.small {
+    padding: 7px;
+}

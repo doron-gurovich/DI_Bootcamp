@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/calc_style.css">
+    <style>
+      button {
+        width:70px;
+        height:70px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class = "green" type="button" id="myBtn" name="button" onclick="myFunction()" value="0">0</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="1">1</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="2">2</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="3">3</button>
+    <br>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="4">4</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="5">5</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="6">6</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="7">7</button>
+    <br>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="8">8</button>
+    <button class = "green" type="button" name="button" onclick="myFunction()" value="9">9</button>
+    <button class = "green" type="button" name="button" onclick="operator('.');">.</button>
+    <button class = "orange" type="button" name="button" onclick="equal();">=</button>
+    <br>
+    <button class = "orange" type="button" name="button" onclick="operator('+');">+</button>
+    <button class = "orange" type="button" name="button" onclick="operator('-');">-</button>
+    <button class = "orange" type="button" name="button" onclick="operator('*');">*</button>
+    <button class = "orange" type="button" name="button" onclick="operator('/');">/</button>
+    <br>
+    <button class = "big blue" type="button" name="button" onclick="operator('/');">Reset</button>
+    <button class = "big red" type="button" name="button" onclick="operator('/');">Clear</button>
+
+    <script src="./calc_code.js" charset="utf-8"></script>
+  </body>
+</html>
