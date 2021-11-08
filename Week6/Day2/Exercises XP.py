@@ -24,7 +24,7 @@ x = (99^3) * 8
 """
 >>> 5 < 3    False
 >>> 3 == 3   True
->>> 3 == "3" Error
+>>> 3 == "3" False
 >>> "3" > 3  Error
 >>> "Hello" == "hello" False
 """
@@ -86,3 +86,14 @@ elif 40 < i_users_height_in_cm <= 145 :
     print(f"your are as tall as {i_users_height} inches or {i_users_height_in_cm} cm. \nNot yet there ...")
 else :
     print("please insert the relevant number")
+    
+# exercise #4 XP Ninja
+
+str_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+from collections import Counter
+
+counter = Counter(str_text)
+i_number_of_letters = len(str_text) - counter[' ']
+
+print(f"we have {i_number_of_letters} in our long long text.")
