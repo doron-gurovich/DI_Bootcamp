@@ -17,6 +17,7 @@ class Farm:
         for k,v in self.animal.items():
             result += str(k) + ": "+ str(v) + "\n"
         
+        result += "\t bla-bla-bla"
         
         return result
 
