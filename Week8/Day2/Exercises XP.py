@@ -148,7 +148,16 @@ class Zoo:
         sort_dict_len = 0
         sort_dict_counter = 0
         
+        """
         
+        for s in self.animals:
+            for k, v in convolution_dict.items():
+                sort_dict_counter += 1
+                if s[0] == k:
+                    for j in range(sort_dict_len, sort_dict_len + v):
+                        sort_dict[sort_dict_counter].append()
+        
+        """
         
         return sort_dict
     
