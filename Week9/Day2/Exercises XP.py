@@ -54,6 +54,7 @@ class Currency:
         if self.currency == cur.currency:
             return self.amount + cur.amount
         else:
+            raise TypeError("Cannot add between Currency type <dollar> and <shekel>")
             return -1
 
     def __radd__(self, num):
