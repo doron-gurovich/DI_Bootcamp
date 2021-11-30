@@ -16,7 +16,8 @@ class Family:
         
         input_family = list(args)
         for el in input_family:
-            self.members.append(dict(el.items()))
+            if type(el) == 'dict':
+                self.members.append(dict(el.items()))
 
     def born(self, **kvargs):
         
@@ -58,5 +59,33 @@ print(QQQ.is_18('Michael++'))
 # Exercise 2 : TheIncredibles Family
 
 class TheIncredibles(Family):
-    pass
     
+    def __init__(self, power, incredible_name, last_name, *members):
+        super().__init__(self, last_name, *members)
+        
+        self.power = power
+        self.incredible_name = incredible_name
+    
+    def use_power(self):
+        
+        """
+        Info: Add a method called use_power, 
+        this method should print the power of a member if they are over 18 years old. 
+        If not raise an exception (look up exceptions) which stated they are not over 18 years old
+        """
+        
+        pass
+    
+    def incredible_presentation(self):
+        
+        """
+        Info: Add a method called incredible_presentation which presents the family members 
+        with their incredible names and powers.
+        """
+        
+        pass
+    
+# https://en.wikipedia.org/wiki/List_of_The_Incredibles_characters
+
+bob_list = [{'name': "Bob Parr", 'age': 38, 'gender': "Male",'is_child':False}]
+Bob_Parr = TheIncredibles("strength", "Mr. Incredible", "The Parr Family", *bob_list)

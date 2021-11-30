@@ -49,12 +49,18 @@ class Currency:
         
         return f"{self.amount} {cur}"
     
-    def __add__(self, cur, num = 0): # not yet clear how to add Currency element and integer number using the same method
+    def __add__(self, cur): # tricky way. overloaded operator doesn't commutative (obvously)
         
-        if self.currency == cur.currency:
-            return self.amount + cur.amount
+        if type(cur) == int:
+            return self.amount + cur
+        elif type(cur) == Currency:
+            if self.currency == cur.currency:
+                return self.amount + cur.amount
+            else:
+                raise TypeError("Cannot add between Currency type <dollar> and <shekel>")
+                return -1
         else:
-            raise TypeError("Cannot add between Currency type <dollar> and <shekel>")
+            raise TypeError("Ïnt or Currency type expected here")
             return -1
 
     def __iadd__(self, num): # __iadd__ is the correct dunder for += 
