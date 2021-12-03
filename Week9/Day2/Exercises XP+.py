@@ -16,7 +16,7 @@ class Family:
         
         input_family = list(args)
         for el in input_family:
-            if type(el) == 'dict':
+            if type(el) == dict:
                 self.members.append(dict(el.items()))
 
     def born(self, **kvargs):
@@ -87,5 +87,5 @@ class TheIncredibles(Family):
     
 # https://en.wikipedia.org/wiki/List_of_The_Incredibles_characters
 
-bob_list = [{'name': "Bob Parr", 'age': 38, 'gender': "Male",'is_child':False}]
-Bob_Parr = TheIncredibles("strength", "Mr. Incredible", "The Parr Family", *bob_list)
+# bob_list = 
+Bob_Parr = TheIncredibles("strength", "Mr. Incredible", "The Parr Family", *[{'name': "Bob Parr", 'age': 38, 'gender': "Male",'is_child':False}])
