@@ -20,6 +20,8 @@ def get_words_from_file(filename = "./random sentence generator.txt"):
         result = file.readlines()
         result = [line.rstrip() for line in result]
     
+    file.close()
+    
     return result
     
 def get_random_sentence(length, *args):
