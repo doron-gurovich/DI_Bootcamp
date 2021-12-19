@@ -20,6 +20,6 @@ console.log(fruits);
 // Exercise 2:
 
 let moreFruits = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
-let strRes = moreFruits[1][1];
+let strRes = moreFruits[1][1][0];
 
 console.log(strRes);
