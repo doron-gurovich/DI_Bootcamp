@@ -58,9 +58,6 @@ $(document).ready(function() {
         });
 });
 
-
-
-
     // Sortable Code
     var fixHelperModified = function(e, tr) {
         var $originals = tr.children();
