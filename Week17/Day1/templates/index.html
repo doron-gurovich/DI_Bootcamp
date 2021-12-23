@@ -117,11 +117,10 @@
           <!--Grid row-->
           <div class="row">
           <!--Grid column-->
-            <div class="col-auto mb-4 mb-md-0">
-                    <button type="submit" class="btn btn-primary mb-4" onclick = "getWeekNumber(new Date())[1]" value = "">
-                        WW
-                    </button>
-            </div>
+          <div class="col-auto">
+            <p class="pt-2"><strong class="text-black">current work week #: </strong> <p id="demo" class="text-black" ></p>
+            </p>
+          </div>
           <!--Grid column-->
 
           <!--Grid column-->
@@ -170,6 +169,22 @@
             modal.style.display = "none";
         }
     }
+    </script>
+
+    <script>
+        var d = new Date()
+
+        // Copy date so don't modify original
+        // d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+        // Set to nearest Thursday: current date + 4 - current day number
+        // Make Sunday's day number 7
+        d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+        // Get first day of year
+        var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+        // Calculate full weeks to nearest Thursday
+        var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+
+        document.getElementById("demo").innerHTML = weekNo;
     </script>
 </body>
 </html>
