@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">QDPS</a>
@@ -65,14 +64,15 @@
         </div>
     </header>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <div class="hero-image">
+      <div class="hero-text">
+          <div class="container_login_btn">
+              <div class="center_login_btn">
+                  <button onclick="document.getElementById('id01').style.display='block'" style="width:200px">Login</button>
+              </div>
+          </div>
+      </div>
+    </div>
 
     <div id="id01" class="modal">
 
@@ -103,14 +103,7 @@
       </form>
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <footer class="bg-light text-center text-white">
+    <footer class="bg-light text-center text-white container_footer">
         <!-- Grid container -->
       <div class="container p-4 pb-0">
         <form action="">
@@ -118,8 +111,7 @@
           <div class="row">
           <!--Grid column-->
           <div class="col-auto">
-            <p class="pt-2"><strong class="text-black">current work week #: </strong> <p id="demo" class="text-black" ></p>
-            </p>
+              <p class="pt-2 text-black"> current work week #: <strong id="demo"></strong></p>
           </div>
           <!--Grid column-->
 
@@ -165,6 +157,11 @@
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
+
+        height = document.getElementById("content").offsetHeight;
+        width  = document.getElementById("content").offsetWidth;
+        self.resizeTo(20, 40);
+
         if (event.target == modal) {
             modal.style.display = "none";
         }
@@ -172,13 +169,14 @@
     </script>
 
     <script>
-        var d = new Date()
+        var d = new Date();
+        d.setDate(d.getDate()+0); // += 1 is tomorrow, since we have 1x day shift for WW calculations in Israel
 
         // Copy date so don't modify original
         // d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
         // Set to nearest Thursday: current date + 4 - current day number
         // Make Sunday's day number 7
-        d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+        d.setUTCDate(d.getUTCDate() + 5 - (d.getUTCDay()||7));
         // Get first day of year
         var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
         // Calculate full weeks to nearest Thursday

@@ -2,13 +2,32 @@
 * { margin: 0; padding: 0; }
 
 html {
-	background: url(./pq.jpg) no-repeat center center fixed;
+	/*background: url(./pq.jpg) no-repeat center center fixed;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
     background-size: cover;
 }
 
+
+.hero-image {
+  background-image: url("./pq.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -109,7 +128,7 @@ button:hover {
 }
 
 img.avatar {
-  width: 20%;
+  width: 30%;
   border-radius: 50%;
 }
 
@@ -142,7 +161,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 40%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -186,4 +205,47 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+
+.container_login_btn {
+  height: 200px;
+  position: relative;
+}
+
+.center_login_btn {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.container_footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_footer_flow {
+  justify-content: space-between;
+}
+
+#div1 {
+  float: left;
+  background-color: lightcyan;
+  width: 31vw;
+  height: 70vh;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+#div2 {
+  float: left;
+  background-color: lightgrey;
+  width: 65vw;
+  height: 70vh;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid black;
 }
