@@ -50,6 +50,24 @@
       </div>
     </nav>
 
+    <button class="open-button" onclick="openForm()">Motivation</button>
+
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Motivation</h1>
+
+        <label for="email"><b>Flow description</b></label>
+
+          <textarea name="flowDescription" id="comment" rows="4" cols="50"
+                    placeholder="Shortly describe the motivation and research question">
+          </textarea>
+
+        <button type="submit" class="btn">Submit</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+
     <h2>Flow chart</h2>
     <p>Create your Flow chart by choosing the procedures from available libraries</p>
 
@@ -165,6 +183,16 @@
           var data = ev.dataTransfer.getData("text");
           ev.target.appendChild(document.getElementById(data));
         }
+    </script>
+
+    <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
     </script>
 
 </body>

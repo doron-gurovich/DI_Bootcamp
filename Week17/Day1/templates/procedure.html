@@ -55,10 +55,29 @@
       </div>
     </nav>
 
+    <button class="open-button" onclick="openForm()">Press related specification</button>
+
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Press related specification</h1>
+
+        <label for="email"><b>Stations in use</b></label>
+        <input type="text" placeholder="Press stations and their use in the experiment" name="flowDescription" required>
+
+        <label for="email1"><b>Substrate</b></label>
+        <input type="text" placeholder="Substrates in this experiment" name="flowDescription" required>
+
+        <button type="submit" class="btn">Submit</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+    <br />
+    <br />
     <br />
 
     <div id="div3">
-        <h1> QDPS procedures are based on the following general principles</h1>
+        <h1> General principles of QDPS procedures</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis aliquam diam. Vivamus feugiat nisl quis ante varius vulputate. </p>
         <p>Morbi hendrerit vestibulum orci et posuere. Donec malesuada accumsan malesuada. Proin laoreet, ex vitae consequat dapibus, diam ipsum ornare lorem, vitae tempor leo dui tempus mauris.</p>
         <p>Fusce pretium laoreet quam. Curabitur vestibulum nunc quis tellus fermentum, porttitor auctor sem varius. Ut tristique ligula non augue porta pretium. Nulla eu erat at orci hendrerit pulvinar.</p>
@@ -305,6 +324,14 @@
           evt.currentTarget.className += " active";
         }
     </script>
+    <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
 
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
 </body>
 </html>
