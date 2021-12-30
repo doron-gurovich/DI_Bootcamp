@@ -52,6 +52,13 @@ header.qdps h1 {
     font-size: xxx-large;
 }
 
+@media print {
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+}
+
 .btn {
     font-weight: 700;
     text-transform: uppercase;
