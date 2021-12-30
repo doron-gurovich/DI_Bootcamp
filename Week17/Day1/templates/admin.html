@@ -2,22 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Project intro</title>
+    <title>QDPS about</title>
     <!-- Google fonts -->
     <link href = "https://fonts.googleapis.com/css?family=Montserrat" rel = "stylesheet">
     <!-- Bootstrap CSS from CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- my own style-->
     <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='introStyle.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -39,7 +32,7 @@
                 <li><a class="dropdown-item" href="flow_chart.html">Flow chart</a></li>
                 <li><a class="dropdown-item" href="procedure.html">Procedure</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item current" href="intro_project.html">Introduce project</a></li>
+                <li><a class="dropdown-item" href="intro_project.html">Introduce project</a></li>
                 <li><a class="dropdown-item" href="intro_press.html">Introduce press</a></li>
               </ul>
             </li>
@@ -60,7 +53,7 @@
                 About
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="about_QDPS.html">General introduction</a></li>
+                <li><a class="dropdown-item current" href="about_QDPS.html">General introduction</a></li>
                 <li><a class="dropdown-item" href="QDPS_config.html">QDPS config FAQ</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">QDPS @Confluence</a></li>
@@ -76,125 +69,54 @@
       </div>
     </nav>
 
-    <h1>Project introduction</h1>
+    <div class="tab">
+      <button class="tablinks" onclick="openItem(event, 'TestConfig')">Test config</button>
+      <button class="tablinks" onclick="openItem(event, 'PressConfiguration')">Press</button>
+      <button class="tablinks" onclick="openItem(event, 'Procedure')">Procedure</button>
+    </div>
 
-    <!-- Create Form -->
-    <form id="form_intro">
+    <div id="TestConfig" class="tabcontent">
+      <h3>Test configuration</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis aliquam diam. Vivamus feugiat nisl quis ante varius vulputate. Morbi hendrerit vestibulum orci et posuere. Donec malesuada accumsan malesuada. Proin laoreet, ex vitae consequat dapibus, diam ipsum ornare lorem, vitae tempor leo dui tempus mauris. Fusce pretium laoreet quam. Curabitur vestibulum nunc quis tellus fermentum, porttitor auctor sem varius. Ut tristique ligula non augue porta pretium. Nulla eu erat at orci hendrerit pulvinar. Nulla efficitur tristique augue, eu imperdiet neque luctus in. Vivamus maximus eros leo. Pellentesque elementum ornare turpis id rhoncus. Sed dictum euismod tortor, sit amet gravida eros accumsan id..</p>
+    </div>
 
-        <!--
-        <div class="form-control">
-            <label for="name" id="label-name">
-                Name
-            </label>
+    <div id="PressConfiguration" class="tabcontent">
+      <h3>Press configuration</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis aliquam diam. Vivamus feugiat nisl quis ante varius vulputate. Morbi hendrerit vestibulum orci et posuere. Donec malesuada accumsan malesuada. Proin laoreet, ex vitae consequat dapibus, diam ipsum ornare lorem, vitae tempor leo dui tempus mauris. Fusce pretium laoreet quam. Curabitur vestibulum nunc quis tellus fermentum, porttitor auctor sem varius. Ut tristique ligula non augue porta pretium. Nulla eu erat at orci hendrerit pulvinar. Nulla efficitur tristique augue, eu imperdiet neque luctus in. Vivamus maximus eros leo. Pellentesque elementum ornare turpis id rhoncus. Sed dictum euismod tortor, sit amet gravida eros accumsan id.</p>
+    </div>
 
-            <input type="text"
-                   id="name"
-                   placeholder="Enter your name" />
-        </div>
-        -->
+    <div class="hero-image">
+      <div class="hero-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra elit ut ante rhoncus mollis.
 
-        <div class="form-control_intro">
-            <label for="role1" id="label-role1">
-                Project name
-            </label>
+      </div>
+    </div>
 
-            <!-- Dropdown options -->
-            <select name="role1" id="role1">
-                <option value="A">AAA</option>
-                <option value="B">BBB</option>
-                <option value="C">CCC</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-
-        <div class="form-control_intro">
-            <label for="role2" id="label-role2">
-                Select POR platform
-            </label>
-
-            <!-- Dropdown options -->
-            <select name="role2" id="role2">
-                <option value="S3">S3</option>
-                <option value="S4">S4</option>
-                <option value="S5">S5</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-
-        <div class="form-control_intro">
-            <label for="role3" id="label-role3">
-                Ink testing plan
-            </label>
-
-            <!-- Dropdown options -->
-            <select name="role3" id="role3">
-                <option value="core">Core</option>
-                <option value="white">White</option>
-                <option value="special">Special</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-<!--
-        <div class="form-control_intro">
-            <label>
-                Would you recommed GeeksforGeeks to a friend?
-            </label>
-            <br>
-
-            <label for="recommed-1">
-                <input type="radio"
-                       id="recommed-1"
-                       name="recommed">Yes</input>
-            </label>
-            <label for="recommed-2">
-                <input type="radio"
-                       id="recommed-2"
-                       name="recommed">No</input>
-            </label>
-            <label for="recommed-3">
-                <input type="radio"
-                       id="recommed-3"
-                       name="recommed">Maybe</input>
-            </label>
-        </div>
-
-        <div class="form-control_intro">
-            <label>Languages and Frameworks known
-                <small>(Check all that apply)</small>
-            </label>
-
-            <label for="inp-1">
-                <input type="checkbox"
-                       name="inp">C</input></label>
-            <label for="inp-2">
-                <input type="checkbox"
-                       name="inp">C++</input></label>
-        </div>
--->
-        <div class="form-control_intro">
-            <label for="comment">
-                Short description and motivation
-            </label>
-
-            <!-- multi-line text input control -->
-            <textarea name="comment" id="comment" rows="4" cols="50"
-                placeholder="What is current development stage of the project? What research questions are?">
-            </textarea>
-        </div>
-
-    </form>
-
-    <footer class="bg-light text-center text-white container_footer_flow">
+    <footer class="bg-light text-center text-white container_footer">
         <!-- Grid container -->
       <div class="container p-4 pb-0">
         <form action="">
           <!--Grid row-->
           <div class="row">
-            <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-auto">
+              <p class="pt-2 text-black"> current work week #: <strong id="demo"></strong></p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
           <div class="col-auto mb-4 mb-md-0">
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary mb-4">
                 Save
+              </button>
+          </div>
+            <!--Grid column-->
+            <!--Grid column-->
+          <div class="col-auto mb-4 mb-md-0">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary mb-4">
+                Publish
               </button>
           </div>
             <!--Grid column-->
@@ -216,5 +138,21 @@
 
     <!-- Bootstrap JS from CDN-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        function openItem(evt, itemName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(itemName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>

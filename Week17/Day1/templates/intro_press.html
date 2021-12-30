@@ -20,34 +20,53 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Hey_Machine_Learning_Logo.png">
+        <!-- {{ url_for('static', filename='logo.png') }}-->
+
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">QDPS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navigation">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">QDPS @Confluence</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Operation
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navigation">
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="flow_chart.html">Flow chart</a></li>
-                <li><a class="dropdown-item" href="#">Procedure</a></li>
+                <li><a class="dropdown-item" href="procedure.html">Procedure</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item current" href="intro_project.html">Introduce project</a></li>
-                <li><a class="dropdown-item" href="intro_press.html">Introduce press</a></li>
+                <li><a class="dropdown-item" href="intro_project.html">Introduce project</a></li>
+                <li><a class="dropdown-item current" href="intro_press.html">Introduce press</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about_QDPS.html">About QDPS</a>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tool
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="library.html">Your Library</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="admin.html">QDPS Admin</a></li>
+              </ul>
             </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="about_QDPS.html">General introduction</a></li>
+                <li><a class="dropdown-item" href="QDPS_config.html">QDPS config FAQ</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">QDPS @Confluence</a></li>
+              </ul>
+            </li>
+
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -76,21 +95,21 @@
 
         <div class="form-control_intro">
             <label for="role1" id="label-role1">
-                Project name
+                Press name
             </label>
 
             <!-- Dropdown options -->
             <select name="role1" id="role1">
-                <option value="A">AAA</option>
-                <option value="B">BBB</option>
-                <option value="C">CCC</option>
+                <option value="m1">M-1</option>
+                <option value="m2">M-2</option>
+                <option value="m3">M-3</option>
                 <option value="other">Other</option>
             </select>
         </div>
 
         <div class="form-control_intro">
             <label for="role2" id="label-role2">
-                Select POR platform
+                Select press platform
             </label>
 
             <!-- Dropdown options -->
@@ -102,19 +121,6 @@
             </select>
         </div>
 
-        <div class="form-control_intro">
-            <label for="role3" id="label-role3">
-                Ink testing plan
-            </label>
-
-            <!-- Dropdown options -->
-            <select name="role3" id="role3">
-                <option value="core">Core</option>
-                <option value="white">White</option>
-                <option value="special">Special</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
 <!--
         <div class="form-control_intro">
             <label>
@@ -152,16 +158,133 @@
                        name="inp">C++</input></label>
         </div>
 -->
-        <div class="form-control_intro">
-            <label for="comment">
-                Short description and motivation
-            </label>
-
-            <!-- multi-line text input control -->
-            <textarea name="comment" id="comment" rows="4" cols="50"
-                placeholder="What is current development stage of the project? What research questions are?">
-            </textarea>
-        </div>
+        <table id="customers">
+          <tr>
+            <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#1</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+            <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#2</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+              <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#3</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+              <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#4</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+              <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#5</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+              <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#6</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+              <th>
+                <div class="dropdown">
+                  <button class="dropbtn">S#7</button>
+                  <div class="dropdown-content">
+                  <a href="#">Cyan</a>
+                  <a href="#">Magenta</a>
+                  <a href="#">Yellow</a>
+                  <a href="#">Black</a>
+                  </div>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+            <td>
+                <input type="text" name='output0'  placeholder='WD #' class="form-control"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+            <td>
+                <div class="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+            </td>
+          </tr>
+        </table>
 
     </form>
 

@@ -33,6 +33,18 @@ def intro_project():
 def intro_press():
     return render_template('intro_press.html')
 
+@app.route('/admin.html')
+def admin():
+    return render_template('admin.html')
+
+@app.route('/library.html')
+def library():
+    return render_template('library.html')
+
+@app.route('/QDPS_config.html')
+def QDPS_config():
+    return render_template('QDPS_config.html')
+
 @app.route('/about_QDPS.html')
 def about_QDPS():
     return render_template('about_QDPS.html')
