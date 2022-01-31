@@ -1,0 +1,11 @@
+1. errors
+2. 
+
+notes:
+1. Login button --> nav
+2. after login - autorization, see what was already done 
+3. Procedure: choose procedure from the flow for the corrections
+4. Notation:
+	4.1 Library
+	4.2 Flow
+	4.3 

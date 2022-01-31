@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .alert-error {
+  background-color: red;
+  color: white;
+}
+
+    .alert-success {
+      background-color: green;
+      color: black;
+}
+</style>
+<body>
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+      <div class="alert-{{category}}">Error: {{ message }}</div>
+    {% endfor %}
+</body>
+</html>
