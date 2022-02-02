@@ -7,33 +7,16 @@
 <h1>welcome to the sign up page!</h1>
 <p>Fill out the form</p>
 
-<p>
-  {% if position %}
-  The position you hold is {{position}}
-  Please update it in the form below:
-  {% else %}
-  Please enter your position:
-  {% endif %}
-</p>
-
 <form method="POST">
   {{ form.hidden_tag() }}
   {{ form.position.label}}{{ form.position() }}
+  <br>
+  {{ form.name.label}}{{ form.name() }}
+  <br>
+  {{ form.email.label}}{{ form.email() }}
+  <br>
   {{ form.submit() }}
 
 </form>
-
-<br>
-  <form action="{{url_for('thank_u')}}">
-    <label for="first">First Name:</label>
-    <input type="text" name="first" placeholder="type your first name">
-    <br>
-    <label for="e-mail">e-mail:</label>
-    <input type="email" name="e-mail" placeholder="type your @email">
-
-    <input type="submit" placeholder="Submit">
-  </form>
-
-</div>
 
 {% endblock %}

@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_wtf import FlaskForm
-from wtforms import Form, BooleanField, StringField, SubmitField
+from wtforms import (Form, BooleanField, StringField, SubmitField,
+                    PasswordField, RadioField, validators,
+                    SelectField, TextAreaField)
+
+from wtforms.fields.html5 import EmailField
 
 from wtforms.validators import DataRequired
 
@@ -10,7 +14,11 @@ app.config['SECRET_KEY'] = 'mysecretkey'
 
 class InfoForm(FlaskForm):
 
-    position = StringField("What position you hold?")
+    position = RadioField('Please define your position:',
+                            choices=[('pos_r', 'Client'), ('pos_t', 'Technician'), ('pos_a', 'Admin')])
+    name = StringField("Please introduce yourself: what is your name? ", validators=[DataRequired()])
+    email = EmailField('Email address ', validators=[DataRequired()])
+
     submit = SubmitField('Submit')
 
 @app.route('/')
@@ -19,18 +27,43 @@ def index():
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
-    position = False
     form = InfoForm()
     if form.validate_on_submit():
-        position = form.position.data
-        form.position.data = ''
+        session['position'] = form.position.data
+        session['name'] = form.name.data
+        session['email'] = form.email.data
 
-    return render_template('sign-up.html', form=form, position=position)
+        return redirect(url_for('thank-u'))
+
+    return render_template('sign-up.html', form=form)
 
 @app.route('/thank-u')
 def thank_u():
-    first = request.args.get('first')
-    return render_template('thank-u.html', first=first)
+    return render_template('thank-u.html')
+
+@app.route('/add-dish')
+def add_dish():
+    return render_template('add-dish.html')
+
+@app.route('/execute-order')
+def order():
+    return render_template('execute-order.html')
+
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
+@app.route('/introduce-order')
+def introduce_order():
+    return render_template('introduce-order.html')
+
+@app.route('/make-order')
+def make_order():
+    return render_template('make-order.html')
+
+@app.route('/share-lib')
+def share_lib():
+    return render_template('share-lib.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
