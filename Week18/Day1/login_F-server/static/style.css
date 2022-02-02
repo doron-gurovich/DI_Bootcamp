@@ -6,3 +6,7 @@
     margin-right: 20px;
     margin-top: 15px;    /* if you want it vertically middle of the navbar. */
 }
+
+.em-bold {
+  font-weight: bold;
+}
