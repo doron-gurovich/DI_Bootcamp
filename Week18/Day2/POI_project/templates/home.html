@@ -19,6 +19,11 @@
     <p>That's why we implementing the cutting edge technology to pizza manufacturing by using Outside-In approach!</p>
     <p>That's exactly why we invite you to Pizza Outside-In (POI)</p>
 
-    <a href="{{url_for('login')}}">Wonna sign up? Click here!</a>
+    {% if current_user.is_authenticated %}
+    <h4>Hi {{current_user.username}}</h4>
+    {% else %}
+    <h4>Please login or register!</h4>
+    {% endif %}
+
   </div>
 {% endblock %}

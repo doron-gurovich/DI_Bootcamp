@@ -17,23 +17,29 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <img class="logo" src="{{url_for('static', filename='logo1.jpg')}}" alt="uups ... no logo found">
 
-      <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Home
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{url_for('home')}}">Home</a>
+            <div class="dropdown-divider"></div>
+              {% if current_user.is_authenticated %}
+              <a class="dropdown-item" href="{{url_for('logout')}}">Logout</a>
+              {% else %}
+              <a class="dropdown-item" href="{{url_for('login')}}">Login</a>
+              <a class="dropdown-item" href="{{url_for('register')}}">Register</a>
+              {% endif %}
+            </div>
           </li>
 
-          {% if current_user.is_authenticated %}
-          <li class = "nav-item"> <a href="{{url_for('logout')}}">Logout</a></li>
-          {% else %}
-          <li class = "nav-item"> <a href="{{url_for('login')}}"></a>Log In</li>
-          <li class = "nav-item"> <a href="{{url_for('register')}}">Register</a></li>
-          {% endif %}
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

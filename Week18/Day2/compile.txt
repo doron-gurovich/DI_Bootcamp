@@ -1,0 +1,5 @@
+flask db init
+flask db migrate -m "creating users"
+flask db upgrade
+
+pyhton app.py

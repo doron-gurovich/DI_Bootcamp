@@ -1,4 +1,4 @@
-222from POI_project import app, db
+from POI_project import app, db
 from flask import Flask, render_template, request, redirect, session, url_for, flash, abort
 from flask_login import login_user, login_required, logout_user
 from flask_wtf import FlaskForm
@@ -9,8 +9,8 @@ from wtforms import (Form, BooleanField, StringField, SubmitField,
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 from POI_project.models import User
-from POI_project.models import LoginForm, RegistrationForm
-form werkzeug.security import generate_password_hash, check_password_hash
+from POI_project.forms import LoginForm, RegistrationForm
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route('/')
 def home():
@@ -18,9 +18,9 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form LoginForm()
+    form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email= form.email.data).first()
+        user = User.query.filter_by(email=form.email.data).first()
 
         if user.check_password(form.password.data) and user is not None:
             login_user(user)
@@ -43,7 +43,7 @@ def register():
         user = User(email = form.email.data,
                     username = form.username.data,
                     password = form.password.data)
-        db.sessio.add(user)
+        db.session.add(user)
         db.session.commit()
         flash("We are good! Thank you for the registration!")
         return redirect(url_for('login'))
@@ -62,26 +62,32 @@ def logout():
     return render_template(url_for('home.html'))
 
 @app.route('/add-dish')
+@login_required
 def add_dish():
     return render_template('add-dish.html')
 
 @app.route('/execute-order')
+@login_required
 def order():
     return render_template('execute-order.html')
 
 @app.route('/history')
+@login_required
 def history():
     return render_template('history.html')
 
 @app.route('/introduce-order')
+@login_required
 def introduce_order():
     return render_template('introduce-order.html')
 
 @app.route('/make-order')
+@login_required
 def make_order():
     return render_template('make-order.html')
 
 @app.route('/share-lib')
+@login_required
 def share_lib():
     return render_template('share-lib.html')
 
