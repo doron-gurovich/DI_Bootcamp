@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="jumbotron">
-  <h1>Thank you and welcome on board!</h1>
+  <h1>Thank you {{session['name'].capitalize()}} ({{session['position'].capitalize()}}) and welcome on board!</h1>
 </div>
 
 {% endblock %}

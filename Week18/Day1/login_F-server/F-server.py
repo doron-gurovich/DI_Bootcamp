@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = 'mysecretkey'
 class InfoForm(FlaskForm):
 
     position = RadioField('Please define your position:',
-                            choices=[('pos_r', 'Client'), ('pos_t', 'Technician'), ('pos_a', 'Admin')])
+                            choices=[('Client', 'Client'), ('Technician', 'Technician'), ('Admin', 'Admin')])
     name = StringField("Please introduce yourself: what is your name? ", validators=[DataRequired()])
     email = EmailField('Email address ', validators=[DataRequired()])
 
@@ -33,7 +33,7 @@ def sign_up():
         session['name'] = form.name.data
         session['email'] = form.email.data
 
-        return redirect(url_for('thank-u'))
+        return redirect(url_for('thank_u'))
 
     return render_template('sign-up.html', form=form)
 

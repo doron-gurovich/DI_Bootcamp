@@ -10,3 +10,8 @@
 .em-bold {
   font-weight: bold;
 }
+
+.body-bkg {
+ background-image: url({{ url_for('static', filename='full.jpg') }});
+ background-color: #cccccc;
+}
