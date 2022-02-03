@@ -1,0 +1,17 @@
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
+}
+
+.em-bold {
+  font-weight: bold;
+}
+
+.body-bkg {
+ background-image: url({{ url_for('static', filename='full.jpg') }});
+ background-color: #cccccc;
+}
